@@ -1,0 +1,15 @@
+package dao;
+
+import Model.Cliente;
+import Model.ContaCliente;
+import java.util.List;
+
+public interface ClienteDao {
+
+    public void create(Cliente c);
+
+    public boolean checkLogin(String email, String senha);
+
+    
+
+}
