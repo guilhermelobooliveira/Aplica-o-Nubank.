@@ -1,0 +1,34 @@
+package Controller;
+
+import Model.Cliente;
+import Model.ContaCliente;
+import View.Login;
+import View.TelaCredito;
+import dao.ClienteDaoImp;
+import java.sql.SQLException;
+import java.util.List;
+import java.util.logging.Level;
+import java.util.logging.Logger;
+
+public class CarregaTelaCredito {
+
+    CarregaTelaCredito(ContaCliente vc) throws SQLException {
+        String email = null;
+        String senha = null;
+
+        email = vc.getEmail();
+        senha = vc.getSenha();
+        
+        new TelaCredito().setVisible(true);
+
+        ClienteDaoImp dao = new ClienteDaoImp();
+         
+      
+        dao.getDados(email, senha);
+       
+        
+     
+        
+    }
+
+    }
