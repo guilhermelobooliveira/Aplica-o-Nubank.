@@ -1,0 +1,51 @@
+/*
+ * To change this license header, choose License Headers in Project Properties.
+ * To change this template file, choose Tools | Templates
+ * and open the template in the editor.
+ */
+package Controller;
+
+import Model.ContaCliente;
+import View.Login;
+import View.TelaCredito;
+import dao.ClienteDaoImp;
+import java.sql.SQLException;
+import javax.swing.JOptionPane;
+
+/**
+ *
+ * @author William Denardi
+ */
+public class ValidaConta {
+
+    public ValidaConta(ContaCliente vc) throws SQLException {
+
+        String email = vc.getEmail();
+        String senha = vc.getSenha();
+
+        if ("".equals(email) || ("".equals(senha))) {
+            JOptionPane.showMessageDialog(null, "Campo nome nao pode ser vazio");
+            //logica para validar se esta vazio//
+
+        }// else if()) {
+               
+            // Logica para validar se existe//
+
+        //}else{
+            // logica para logar
+          //  ClienteDaoImp dao = new ClienteDaoImp();
+
+            //dao.checkLogin(email, senha);
+
+            CarregaTelaCredito cr = new CarregaTelaCredito(vc);
+
+           
+
+        //}
+        
+        
+        
+
+    }
+
+}
