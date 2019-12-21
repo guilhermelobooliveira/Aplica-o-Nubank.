@@ -1,0 +1,35 @@
+package Controller;
+
+import Model.Cliente;
+import Model.ContaCliente;
+import View.CadastroCliente;
+import dao.ClienteDaoImp;
+import javax.swing.JOptionPane;
+
+public class ValidaCliente {
+
+    public ValidaCliente(Cliente c) {
+
+        String nome = c.getNome();
+        String email = c.getEmail();
+        int renda = c.getRenda();
+        int senha = c.getSenha();
+        String tel = c.getTelefone();
+
+        if ("".equals(nome)||("".equals(email))||("".equals(renda))||("".equals(senha)) ){
+            JOptionPane.showMessageDialog(null, "Campo nome nao pode ser vazio");
+
+        }
+
+        else{
+            ClienteDaoImp dao = new ClienteDaoImp();
+
+            dao.create(c);
+
+        }
+
+    }
+
+   
+
+}
